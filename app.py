@@ -9,7 +9,11 @@ def index():
     cotacao = cotacao.json()
     cotacao_dolar = cotacao['USDBRL']['bid']
     cotacao_euro = cotacao['EURBRL']['bid']
-    return render_template('index.html',cotacao_dolar=cotacao_dolar,cotacao_euro=cotacao_euro)
+    z = float(cotacao_dolar)
+    y = float(cotacao_euro)
+    va  = (f'{z:.2f}')
+    vi = (f'{y:.2f}')
+    return render_template('index.html',va=va,vi=vi)
 
 if __name__ == '__main__':
     app.run(debug=True)
